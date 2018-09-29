@@ -1,0 +1,17 @@
+/*全局样式，用来控制浮动，清除浮动，鼠标手势等*/
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.cl::after{
+  display:block;
+  clear:both;
+  content:"";
+  visibility:hidden;
+  height:0;
+}
+.pointer{
+  cursor: pointer;
+}
