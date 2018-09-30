@@ -7,7 +7,7 @@ import ElementUI from 'element-ui'
 import './assets/css/normalize.css'
 import './assets/css/reset.css'
 import './assets/css/common.css'
-
+import './assets/font/iconfont.css'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -17,4 +17,8 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
+})
+// 导航守卫,此处用来做路由拦截
+router.beforeEach((to, from, next) => {
+  next()
 })

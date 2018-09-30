@@ -1,8 +1,9 @@
 <template>
-    <div>
-      <clLeftHeader></clLeftHeader>
-      <transition>
-        <router-view/>
+    <div class="flex">
+      <keep-alive>
+      <clLeftHeader class="left-box"></clLeftHeader></keep-alive>
+      <transition mode="out-in">
+        <router-view class="flex-right"/>
       </transition>
     </div>
 </template>

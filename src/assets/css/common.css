@@ -15,3 +15,15 @@
 .pointer{
   cursor: pointer;
 }
+.flex{
+  display: flex;
+}
+.flex-left{
+  width: 100px;
+  height: 100%;
+  background: antiquewhite;
+  flex-basis:100px;
+}
+.flex-right{
+  flex: 1;
+}

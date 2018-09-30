@@ -15,6 +15,11 @@ export default {
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  .router-link-active{
+    a{
+      color: red;
+    }
+  }
   .v-enter{
     opacity: 0;
   }

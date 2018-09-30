@@ -1,9 +1,9 @@
 <template>
     <div id="cl-header" class="cl-header cl">
-      <router-link tag="div" to="/">
-        <a>page1页面</a>
+      <router-link tag="div" to="/" exact>
+        <a><i class="iconfont icon-edit"></i>page1页面</a>
       </router-link>
-      <router-link tag="div" to="/homePage2/active1">
+      <router-link tag="div" to="/homePage2">
         <a>page2页面</a>
       </router-link>
       <router-link tag="div" to="/page1">
