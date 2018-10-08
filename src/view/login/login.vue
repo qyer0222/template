@@ -12,10 +12,11 @@ export default {
   },
   methods: {
     toLogin () {
-      this.$local.save('nihao', {
+      this.$local.save('loginFetch', {
         login: true,
         username: 'nihao'
       })
+      this.$router.push({path: '/'})
     }
   }
 }

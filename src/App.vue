@@ -11,13 +11,6 @@ export default {
   name: 'App',
   data () {
     return {
-      index: '/home',
-      names: 'left'
-    }
-  },
-  watch: {
-    $router (to, from) {
-      console.log(to.meta.index)
     }
   }
 }

@@ -22,12 +22,18 @@ export default {
   },
   methods: {
     outPage () {
-      this.$local.save('nihao', {
+      this.$local.save('loginFetch', {
         login: null,
         username: null
       })
       this.$router.push({path: '/login'})
     }
+  },
+  created () {
+    // let info = this.$local.fetch('nihao')
+    // if (!info.login) {
+    //   this.$router.push({path: '/login'})
+    // }
   }
 }
 </script>
