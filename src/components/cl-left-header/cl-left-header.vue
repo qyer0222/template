@@ -1,5 +1,5 @@
 <template>
-    <div id="cl-left-header">
+    <div id="cl-left-header" class="cl-left-header">
       <router-link tag="div" to="/homePage2" exact>
         <a>home-page1页面</a>
       </router-link>
@@ -12,6 +12,8 @@
 <script>
 </script>
 
-<style scoped>
-
+<style lang="scss">
+.cl-left-header{
+  width: 200px;
+}
 </style>

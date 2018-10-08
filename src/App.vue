@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <transition>
+    <transition mode="out-in">
       <router-view/>
     </transition>
   </div>
@@ -8,7 +8,18 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      index: '/home',
+      names: 'left'
+    }
+  },
+  watch: {
+    $router (to, from) {
+      console.log(to.meta.index)
+    }
+  }
 }
 </script>
 

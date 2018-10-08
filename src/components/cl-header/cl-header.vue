@@ -9,6 +9,7 @@
       <router-link tag="div" to="/page1">
         <a>外侧page1页面</a>
       </router-link>
+      <div class="fr" @click="outPage">退出</div>
     </div>
 </template>
 
@@ -20,7 +21,13 @@ export default {
     }
   },
   methods: {
-
+    outPage () {
+      this.$local.save('nihao', {
+        login: null,
+        username: null
+      })
+      this.$router.push({path: '/login'})
+    }
   }
 }
 </script>

@@ -25,10 +25,18 @@ export default new Router({
     {
       path: '/',
       component: Home,
+      meta: {
+        index: 1,
+        login: true
+      },
       children: [
         {
           path: '',
           component: homePage1,
+          meta: {
+            index: 1,
+            login: true
+          },
           name: 'homePage1'
         },
         {
@@ -38,7 +46,11 @@ export default new Router({
             {
               path: '',
               component: homePage2Active1,
-              name: 'homePage2'
+              name: 'homePage2',
+              meta: {
+                index: 2,
+                login: true
+              }
             },
             {
               path: 'active2',
@@ -50,12 +62,21 @@ export default new Router({
     {
       path: '/Page1',
       name: 'Page1',
+      meta: {
+        index: 3,
+        login: false
+      },
       component: Page1
     },
     {
       path: '/Login',
       name: 'Login',
       component: Login
+    },
+    {
+      // 重定向到/页面
+      path: '*',
+      redirect: '/'
     }
   ]
 })

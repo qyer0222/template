@@ -26,4 +26,11 @@
 }
 .flex-right{
   flex: 1;
+  width: calc(100% - 200px);
+}
+.flex-box{
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  left: 0;
 }
