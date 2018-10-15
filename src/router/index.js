@@ -1,14 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// 路由懒加载
-const Login = () => import('../view/login/login') // 登陆页面
-const Home = () => import('../view/home/home') // 主页面
-const homePage1 = () => import('../view/home/home-page1/home-page1')
-const Page1 = () => import('../view/page1/page1')
-const homePage2 = () => import('../view/home/home-page2/home-page2')
-const homePage2Active2 = () => import('../view/home/home-page2/home-page2-active2/home-page2-active2')
-const homePage2Active1 = () => import('../view/home/home-page2/home-page2-active1/home-page2-active1')
-
+// 模块化构建
+const Login = r => require.ensure([], () => r(require('../view/login/login')), 'login') // 登陆页面
+const Home = r => require.ensure([], () => r(require('../view/home/home')), 'home')
+const homePage1 = r => require.ensure([], () => r(require('../view/home/home-page1/home-page1')), 'homePage1')
+const Page1 = r => require.ensure([], () => r(require('../view/page1/page1')), 'homePage1')
+const homePage2 = r => require.ensure([], () => r(require('../view/home/home-page2/home-page2')), 'homePage2')
+const homePage2Active2 = r => require.ensure([], () => r(require('../view/home/home-page2/home-page2-active2/home-page2-active2')), 'homePage2')
+const homePage2Active1 = r => require.ensure([], () => r(require('../view/home/home-page2/home-page2-active1/home-page2-active1')), 'homePage2')
 Vue.use(Router)
 // 使用的是history模式
 // 浏览器默认记住滚动行为

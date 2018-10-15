@@ -26,7 +26,8 @@ router.beforeEach((to, from, next) => {
     if (info.login) {
       next()
     } else {
-      router.push({path: '/login'})
+      console.log(to.fullPath)
+      router.push({path: '/login',query:{ Rurl: to.fullPath}})
     }
   } else {
     next()
