@@ -10,9 +10,14 @@ import './assets/css/common.css'
 import './assets/font/iconfont.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import Utile from './lib/utils' // 插件
+import Vuex from 'vuex'
+/* eslint-disable */
+import store from './vuex/store'
+/* eslint-disable */
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(Utile)
+Vue.use(Vuex)
 // Vue.prototype.$cl = 'nihao'
 // 导航守卫,此处用来做路由拦截
 router.beforeEach((to, from, next) => {
@@ -26,8 +31,7 @@ router.beforeEach((to, from, next) => {
     if (info.login) {
       next()
     } else {
-      console.log(to.fullPath)
-      router.push({path: '/login',query:{ Rurl: to.fullPath}})
+      router.push({path: '/login', query: {Rurl: to.fullPath}})
     }
   } else {
     next()
@@ -38,6 +42,7 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
