@@ -40,21 +40,12 @@ export default {
         login: true,
         username: 'nihao'
       })
-<<<<<<< HEAD
-      // 此处做地址记录
-      if (this.$route.query.Rurl) {
-        this.$router.push({path: this.$route.query.Rurl})
-      } else {
-        this.$router.push({path: '/'})
-      }
-=======
       // 此处是重定向
       let redirect = this.$route.query.redirect
       if (!redirect) {
         this.$router.push({path: '/'})
       }
       this.$router.push({path: redirect})
->>>>>>> [Fix] 忘记提交了
     }
   }
 }
