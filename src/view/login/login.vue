@@ -5,7 +5,7 @@
       <div>
         vuex
         <div>
-         {{count}}
+         {{doneTodos}}nihao{{countTodos}}
         </div>
         <div>
           <span @click="decrement">-</span>
@@ -16,24 +16,30 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {}
   },
   created () {
     console.log(this.$store.state.count)
+    console.log(this.$store.getters.doneTodosCount)
   },
   computed: {
-    count () {
-      return this.$store.state.count
-    }
+    ...mapGetters([
+      'doneTodos',
+      'countTodos'
+    ])
   },
   methods: {
     decrement () {
       this.$store.commit('decrement')
     },
     increment () {
-      this.$store.commit('increment')
+      this.$store.commit({
+        type: 'increment',
+        amount: 10
+      })
     },
     toLogin () {
       this.$local.save('loginFetch', {
