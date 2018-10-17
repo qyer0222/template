@@ -31,7 +31,12 @@ router.beforeEach((to, from, next) => {
     if (info.login) {
       next()
     } else {
+<<<<<<< HEAD
       router.push({path: '/login', query: {Rurl: to.fullPath}})
+=======
+      // 路由重定向
+      router.push({path: '/login', query: {redirect: to.path}})
+>>>>>>> [Fix] 忘记提交了
     }
   } else {
     next()
