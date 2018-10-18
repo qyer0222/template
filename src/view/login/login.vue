@@ -9,17 +9,21 @@
         </div>
         <div>
           <span @click="decrement">-</span>
-          <span @click="increment">+</span>
+          <span @click="increment(getData)">+</span>
         </div>
       </div>
     </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+
+import { mapGetters, mapMutations, mapActions } from 'vuex'
+
 export default {
   data () {
-    return {}
+    return {
+      getData: {amount: 10}
+    }
   },
   created () {
     console.log(this.$store.state.count)
@@ -32,15 +36,14 @@ export default {
     ])
   },
   methods: {
-    decrement () {
-      this.$store.commit('decrement')
-    },
-    increment () {
-      this.$store.commit({
-        type: 'increment',
-        amount: 10
-      })
-    },
+    ...mapMutations({
+      // decrement: 'decrement',
+      // increment: 'increment'
+    }),
+    ...mapActions({
+      decrement: 'decrement',
+      increment: 'increment'
+    }),
     toLogin () {
       this.$local.save('loginFetch', {
         login: true,

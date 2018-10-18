@@ -13,6 +13,31 @@ const store = new vuex.Store({
       return state.count
     }
   },
+  actions: {
+    // actionA ({ commit }) {
+    //   return new Promise((resolve, reject) => {
+    //       commit('decrement')
+    //       resolve()
+    //   })
+    // },
+    // actionB (context,payload) {
+    //   return new Promise((resolve, reject) => {
+    //     context.commit('increment',payload)
+    //       resolve()
+    //   })
+    // },
+    // actionC ({dispatch,commit},payload) {
+    //   return dispatch('actionB',payload).then(() => {
+    //        commit('increment',payload);
+    //   })
+    // },
+    decrement (context) {
+      context.commit('decrement')
+    },
+    increment (context, payload) {
+      context.commit('increment', payload)
+    }
+  },
   mutations: {
     increment (state, payload) {
       state.count += payload.amount
